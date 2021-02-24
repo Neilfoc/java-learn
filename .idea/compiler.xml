@@ -2,15 +2,19 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="java-learn" />
+        <module name="javase" />
+        <module name="Javaee" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="java-learn" target="1.8" />
+      <module name="Javaee" target="1.8" />
+      <module name="javase" target="1.8" />
       <module name="test-rabbitMQ-consumer" target="1.8" />
       <module name="test-rabbitMQ-producer" target="1.8" />
     </bytecodeTargetLevel>

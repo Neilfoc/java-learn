@@ -1,7 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4d953b91-8cb5-452f-accb-a0c83398b86c" name="Default Changelist" comment="" />
+    <list default="true" id="4d953b91-8cb5-452f-accb-a0c83398b86c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Javaee/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javaee/src/main/java/rmq/ClientConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javaee/src/main/java/rmq/ConnectionUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javaee/src/main/java/rmq/Consumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javaee/src/main/java/rmq/Producer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/object/Order.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/object/OrderItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/object/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/tests/EncodingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/tests/JedisTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/Account.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/CglibBeanCopierPropertiesCopier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/CommonsBeanUtilsPropertiesCopier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/CommonsPropertyUtilsPropertiesCopier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/GetSetPropertiesCopier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/PropertiesCopier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/PropertiesCopierTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/SpringBeanUtilsPropertiesCopier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/StaticCglibBeanCopierPropertiesCopier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/tests/java8Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/util/GenerateBatchSql.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_rabbitmq_amqpclient_4_0_3.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_springbootstarterlogging_1_5_19_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-learn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-learn.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/算法/src/ID.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/src/java/ID.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/算法/算法.iml" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,77 +47,136 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="47671586ab6f4bcb3f2163fb460a61f175d35186" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/javase/src/tests/copyTest/CommonsBeanUtilsPropertiesCopier.java" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/javase/src/Test.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="localRepository" value="C:\software\apache-maven-3.6.3\repository" />
-        <option name="mavenHome" value="C:/software/apache-maven-3.6.3" />
+        <option name="mavenHome" value="C:\software\apache-maven-3.6.3" />
         <option name="userSettingsFile" value="C:\software\apache-maven-3.6.3\settings.xml" />
       </MavenGeneralSettings>
     </option>
     <option name="importingSettings">
       <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
         <option name="vmOptionsForImporter" value="-Xmx768m" />
       </MavenImportingSettings>
     </option>
   </component>
   <component name="ProjectId" id="1hV4EpkW69nHhqDo3gymXeX3HoV" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/javase/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../我的文档/11105157/Documents/vchat/ChatFiles/GenerateBatchSql.java" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\project\java-learn" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="copyTest" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\java-learn\algorithm\src\java" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.ID">
-    <configuration name="DataConsumer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="DataConsumer" />
-      <module name="java-learn" />
+  <component name="RunManager" selected="Application.EncodingTest">
+    <configuration name="EncodingTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tests.EncodingTest" />
+      <module name="javase" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ID" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ID" />
-      <module name="算法" />
+    <configuration name="FilterTopic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="FilterTopic" />
+      <module name="javase" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Nomal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Nomal" />
-      <module name="java-learn" />
+    <configuration name="Filtera" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Filtera" />
+      <module name="javase" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Test" />
+      <module name="javase" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PropertiesCopierTest.copyProperties" type="JUnit" factoryName="JUnit" singleton="false" temporary="true" nameIsGenerated="true">
+      <module name="javase" />
+      <useClassPathOnly />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.copyTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="copyTest" />
+      <option name="MAIN_CLASS_NAME" value="tests.copyTest.PropertiesCopierTest" />
+      <option name="METHOD_NAME" value="copyProperties" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.FilterTopic" />
+      <item itemvalue="Application.Filtera" />
+      <item itemvalue="Application.EncodingTest" />
+      <item itemvalue="JUnit.PropertiesCopierTest.copyProperties" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ID" />
-        <item itemvalue="Application.Nomal" />
-        <item itemvalue="Application.DataConsumer" />
+        <item itemvalue="Application.EncodingTest" />
+        <item itemvalue="JUnit.PropertiesCopierTest.copyProperties" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.Filtera" />
+        <item itemvalue="Application.FilterTopic" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -96,12 +192,42 @@
       <workItem from="1603007182699" duration="4187000" />
       <workItem from="1603416951589" duration="7839000" />
       <workItem from="1603433762380" duration="236000" />
-      <workItem from="1603507751624" duration="761000" />
+      <workItem from="1603507751624" duration="1435000" />
+      <workItem from="1605343551460" duration="1958000" />
+      <workItem from="1605345936352" duration="6855000" />
+      <workItem from="1605360232146" duration="1002000" />
+      <workItem from="1605489371006" duration="687000" />
+      <workItem from="1606444235032" duration="1676000" />
+      <workItem from="1606484931782" duration="2397000" />
+      <workItem from="1606526387161" duration="1972000" />
+      <workItem from="1606699082065" duration="15000" />
+      <workItem from="1606704117267" duration="1874000" />
+      <workItem from="1607588042967" duration="1319000" />
+      <workItem from="1608273553768" duration="1324000" />
+      <workItem from="1608295536442" duration="98000" />
+      <workItem from="1608345237504" duration="578000" />
+      <workItem from="1608348413584" duration="2291000" />
+      <workItem from="1609986313919" duration="748000" />
+      <workItem from="1610157155251" duration="3449000" />
+      <workItem from="1610246208318" duration="2902000" />
+      <workItem from="1610249882515" duration="4525000" />
+      <workItem from="1610350106423" duration="2320000" />
+      <workItem from="1610367491212" duration="1220000" />
+      <workItem from="1610595867271" duration="463000" />
+      <workItem from="1611056891620" duration="1273000" />
+      <workItem from="1611058188770" duration="3651000" />
+      <workItem from="1611105223027" duration="1444000" />
+      <workItem from="1611192536761" duration="16522000" />
+      <workItem from="1611279006330" duration="3496000" />
+      <workItem from="1611625189880" duration="595000" />
+      <workItem from="1612323604061" duration="15146000" />
+      <workItem from="1614002915222" duration="7292000" />
+      <workItem from="1614081997975" duration="1081000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -113,51 +239,9 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="739" y="274" key="FileChooserDialogImpl" timestamp="1603008849186">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="739" y="274" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1603008849186" />
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom" timestamp="1603428156627">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603428156627" />
-    <state width="1877" height="285" key="GridCell.Tab.0.center" timestamp="1603428156627">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603428156627" />
-    <state width="1877" height="285" key="GridCell.Tab.0.left" timestamp="1603428156627">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603428156627" />
-    <state width="1877" height="285" key="GridCell.Tab.0.right" timestamp="1603428156627">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="285" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603428156627" />
-    <state width="1877" height="2" key="GridCell.Tab.1.bottom" timestamp="1603428156624">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="2" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1603428156624" />
-    <state width="1877" height="2" key="GridCell.Tab.1.center" timestamp="1603428156624">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="2" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1603428156624" />
-    <state width="1877" height="2" key="GridCell.Tab.1.left" timestamp="1603428156624">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="2" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1603428156624" />
-    <state width="1877" height="2" key="GridCell.Tab.1.right" timestamp="1603428156624">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="2" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1603428156624" />
-    <state x="453" y="161" key="SettingsEditor" timestamp="1603009552317">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="453" y="161" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1603009552317" />
-    <state x="478" y="198" key="new project wizard" timestamp="1603423614632">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="478" y="198" key="new project wizard/0.0.1920.1040@0.0.1920.1040" timestamp="1603423614632" />
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
