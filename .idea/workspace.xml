@@ -5,39 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d953b91-8cb5-452f-accb-a0c83398b86c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Javaee/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javaee/src/main/java/rmq/ClientConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javaee/src/main/java/rmq/ConnectionUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javaee/src/main/java/rmq/Consumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Javaee/src/main/java/rmq/Producer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/object/Order.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/object/OrderItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/object/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/tests/EncodingTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/tests/JedisTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/Account.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/CglibBeanCopierPropertiesCopier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/CommonsBeanUtilsPropertiesCopier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/CommonsPropertyUtilsPropertiesCopier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/GetSetPropertiesCopier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/PropertiesCopier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/PropertiesCopierTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/SpringBeanUtilsPropertiesCopier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/StaticCglibBeanCopierPropertiesCopier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/tests/java8Test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/util/GenerateBatchSql.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_rabbitmq_amqpclient_4_0_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_springbootstarterlogging_1_5_19_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/tests/IfElseTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/util/pay/PayChannel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/util/pay/PayChannelEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/util/pay/PayTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/util/pay/WechatPay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/util/pay/YinlianPay.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/util/pay/ZhifubaoPay.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java-learn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-learn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/算法/src/ID.java" beforeDir="false" afterPath="$PROJECT_DIR$/algorithm/src/java/ID.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/算法/算法.iml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,9 +22,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -95,6 +70,7 @@
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/javase/src" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../我的文档/11105157/Documents/vchat/ChatFiles/GenerateBatchSql.java" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
@@ -112,16 +88,9 @@
       <recent name="D:\project\java-learn\algorithm\src\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.EncodingTest">
+  <component name="RunManager" selected="Application.PayTest">
     <configuration name="EncodingTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tests.EncodingTest" />
-      <module name="javase" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FilterTopic" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="FilterTopic" />
       <module name="javase" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -134,9 +103,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PayTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="util.pay.PayTest" />
+      <module name="javase" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="util.pay.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="javase" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -161,18 +154,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Test" />
-      <item itemvalue="Application.FilterTopic" />
       <item itemvalue="Application.Filtera" />
       <item itemvalue="Application.EncodingTest" />
       <item itemvalue="JUnit.PropertiesCopierTest.copyProperties" />
+      <item itemvalue="Application.PayTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.PayTest" />
         <item itemvalue="Application.EncodingTest" />
         <item itemvalue="JUnit.PropertiesCopierTest.copyProperties" />
         <item itemvalue="Application.Test" />
         <item itemvalue="Application.Filtera" />
-        <item itemvalue="Application.FilterTopic" />
       </list>
     </recent_temporary>
   </component>
@@ -223,6 +216,7 @@
       <workItem from="1612323604061" duration="15146000" />
       <workItem from="1614002915222" duration="7292000" />
       <workItem from="1614081997975" duration="1081000" />
+      <workItem from="1614165001622" duration="2196000" />
     </task>
     <servers />
   </component>
