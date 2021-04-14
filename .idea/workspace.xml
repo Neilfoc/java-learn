@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d953b91-8cb5-452f-accb-a0c83398b86c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/javase/src/tests/HttpClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Javaee/src/main/java/TestHBase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/Test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-learn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-learn.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javase/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/javase/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javase/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/javase/src/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javase/src/tests/HttpClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/javase/src/tests/HttpClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/javase/src/tests/copyTest/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +24,7 @@
       <list>
         <option value="Interface" />
         <option value="Enum" />
+        <option value="HTML4 File" />
         <option value="Class" />
       </list>
     </option>
@@ -72,12 +73,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DefaultHtmlFileTemplate" value="HTML4 File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/javase/src" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../我的文档/11105157/Desktop/a.xml" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../我的文档/11105157/Desktop/fontTest.html" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
@@ -99,14 +101,7 @@
       <recent name="D:\project\java-learn\algorithm\src\java" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.HttpClientTest">
-    <configuration name="Filtera" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Filtera" />
-      <module name="javase" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Test">
     <configuration name="HttpClientTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tests.HttpClientTest" />
       <module name="javase" />
@@ -120,12 +115,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PayTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="util.pay.PayTest" />
+    <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tests.copyTest.Test" />
       <module name="javase" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="util.pay.*" />
+          <option name="PATTERN" value="tests.copyTest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -140,13 +135,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+    <configuration name="TestHBase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="TestHBase" />
+      <module name="Javaee" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -170,19 +161,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Filtera" />
-      <item itemvalue="Application.PayTest" />
       <item itemvalue="Application.Test" />
-      <item itemvalue="JUnit.PropertiesCopierTest.copyProperties" />
       <item itemvalue="Application.HttpClientTest" />
+      <item itemvalue="Application.Test (1)" />
+      <item itemvalue="Application.TestHBase" />
+      <item itemvalue="JUnit.PropertiesCopierTest.copyProperties" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.HttpClientTest" />
         <item itemvalue="Application.Test" />
+        <item itemvalue="Application.TestHBase" />
+        <item itemvalue="Application.Test (1)" />
+        <item itemvalue="Application.HttpClientTest" />
         <item itemvalue="JUnit.PropertiesCopierTest.copyProperties" />
-        <item itemvalue="Application.PayTest" />
-        <item itemvalue="Application.Filtera" />
       </list>
     </recent_temporary>
   </component>
@@ -248,7 +239,27 @@
       <workItem from="1614608367266" duration="3109000" />
       <workItem from="1614650722481" duration="7131000" />
       <workItem from="1614669907052" duration="542000" />
-      <workItem from="1614670468430" duration="2156000" />
+      <workItem from="1614670468430" duration="4229000" />
+      <workItem from="1614756852207" duration="668000" />
+      <workItem from="1615344238087" duration="12211000" />
+      <workItem from="1615426112100" duration="3312000" />
+      <workItem from="1615520242441" duration="596000" />
+      <workItem from="1615556615254" duration="761000" />
+      <workItem from="1615604107917" duration="1980000" />
+      <workItem from="1615815654568" duration="1364000" />
+      <workItem from="1615898150256" duration="596000" />
+      <workItem from="1615950671731" duration="2446000" />
+      <workItem from="1616074900090" duration="2186000" />
+      <workItem from="1616290952870" duration="2198000" />
+      <workItem from="1616639057913" duration="1680000" />
+      <workItem from="1616988310794" duration="2796000" />
+      <workItem from="1617176933234" duration="776000" />
+      <workItem from="1617679698482" duration="1457000" />
+      <workItem from="1617780605400" duration="2548000" />
+      <workItem from="1617874468412" duration="5508000" />
+      <workItem from="1617958560464" duration="122000" />
+      <workItem from="1618192373052" duration="2714000" />
+      <workItem from="1618280361543" duration="596000" />
     </task>
     <servers />
   </component>

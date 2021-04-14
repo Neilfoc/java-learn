@@ -1,10 +1,12 @@
 package tests;
 
 
+import org.apache.http.HttpEntity;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
+import org.apache.http.util.EntityUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -44,11 +46,13 @@ public class HttpClientTest {
         StringBuffer buffer =new StringBuffer();
         try {
             httpResponse = httpClient.execute(httpPost);
-            reader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
+            /*reader = new BufferedReader(new InputStreamReader(httpResponse.getEntity().getContent()));
             String line;
             while ((line = reader.readLine()) != null) {
                 buffer.append(line);
-            }
+            }*/
+            HttpEntity entity = httpResponse.getEntity();
+            System.out.println(EntityUtils.toString(entity));
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
@@ -62,7 +66,7 @@ public class HttpClientTest {
                 httpClient.close();
             }
         }
-        System.out.println(buffer);
+        //System.out.println(buffer);
     }
 
     //httpGet

@@ -15,7 +15,9 @@ public class Account {
 
     private double money;
 
-    Account(){}
+    private Integer h;
+
+    public Account(){}
 
     Account(int age, String name, double money) {
         this.age = age;

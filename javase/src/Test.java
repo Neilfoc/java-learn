@@ -1,13 +1,18 @@
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.google.common.collect.Lists;
 import lombok.Data;
 import lombok.SneakyThrows;
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 import net.sf.oval.constraint.NotBlank;
 import net.sf.oval.constraint.NotNull;
-import org.apache.commons.codec.binary.Base64;
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.hadoop.hbase.util.Bytes;
 import org.apache.http.client.config.RequestConfig;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.utils.DateUtils;
 import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
@@ -18,20 +23,25 @@ import org.junit.runners.Parameterized;
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.Pipeline;
 import redis.clients.jedis.Response;
+import tests.copyTest.Account;
 
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * @author 11105157
  * @Description
  * @Date 2020/11/28
  */
+@Slf4j
 public class Test {
 
     @NotNull
@@ -39,7 +49,7 @@ public class Test {
     private String xixi;
 
     //@SneakyThrows
-    public static void main(String[] args) throws MalformedURLException, UnsupportedEncodingException {
+    public static void main(String[] args) throws IOException {
         /*long time = System.nanoTime();
         Thread.sleep(1000);
         // 该方法所基于的时间是随机的，但在同一个JVM中，不同的地方使用的原点时间是一样的。只能用来比较，不能用来当作时间
@@ -80,12 +90,83 @@ public class Test {
         }
         System.out.println(f.getParent());*/
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
+       /* SimpleDateFormat dateFormat = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
         String date = dateFormat.format(new Date());
-        System.out.println(date);
+        System.out.println(date);*/
+
+        //测试对象属性赋值
+        /*Account account = new Account();
+        try {
+            account.setAge(Integer.valueOf("2k"));
+        } catch (Exception e) {
+            log.error("parse integer error",e);
+        }
+        System.out.println(account.getAge());*/
+
+        //测试StringBuilder
+        /*StringBuilder sb = new StringBuilder();
+        sb.append("'xixihaha'");
+        sb.insert(sb.indexOf("h"), "ok");
+        sb.insert(sb.lastIndexOf("'"), "好");
+        System.out.println(sb.toString());*/
+
+        //测试对象的初始赋值
+        /*Account account = new Account();
+        System.out.println(account.getH());
+        System.out.println(account.getAge());
+        System.out.println(account.getMoney());*/
 
 
+        //测试list
+       /* Account account = new Account();
+        account.setAge(100);
+        List<Account> list = new ArrayList<>();
+        list.add(account);
+        account.setName("xx");
+        list.add(account);
+        account.setMoney(1.1);
+        account.setAge(101);
+        list.add(account);
+        System.out.println(list.size());
+        System.out.println(JSON.toJSONString(list));
+        Account account1 = new Account();*/
+
+        //测试增强for
+        /*List<Account> list = new ArrayList<>();
+        for (Account account : list) {
+            System.out.println("xx");
+        }*/
+
+        //测试dateformat
+        /*String s = DateUtils.formatDate(new Date(), "yyyy-MM-dd HH:mm:ss").toString();
+        System.out.println(s);
+        System.out.println(new Date().toString());*/
+
+        //测试正则表达式
+       /* Pattern pattern = Pattern.compile("^[-\\+]?[\\d]*$");
+        Matcher matcher = pattern.matcher("12");
+        System.out.println(matcher.matches());*/
+
+        //测试String和int转换成byte
+        /*System.out.println(Bytes.toBytes("16"));
+        System.out.println(Bytes.toBytes(16));*/
+
+        //测试JSON
+        Account account = new Account();
+        account.setName("name");
+        account.setAge(26);
+        account.setMoney(1);
+        account.setH(180);
+        System.out.println(JSON.toJSON(account));
+        System.out.println(JSON.toJSONString(account));
+
+        JSONObject jsonObject = JSON.parseObject("{\"money\":1.0,\"h\":180,\"name\":\"name\",\"age\":26}");
+        Account account1 = JSON.toJavaObject(jsonObject, Account.class);
+        Account account2 = JSON.parseObject("{\"money\":1.0,\"h\":180,\"name\":\"name\",\"age\":26}", Account.class);
+        System.out.println(JSON.toJSONString(account1));
+        System.out.println(JSON.toJSONString(account2));
     }
+
 
 
 }

@@ -80,6 +80,14 @@
             <version>4.5.2</version>
         </dependency>
 
+        <!-- HBase -->
+        <dependency>
+            <groupId>org.apache.hbase</groupId>
+            <artifactId>hbase-shaded-client</artifactId>
+            <version>1.4.5</version>
+        </dependency>
+
+
     </dependencies>
 
 </project>
