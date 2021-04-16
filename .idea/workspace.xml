@@ -5,13 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4d953b91-8cb5-452f-accb-a0c83398b86c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Javaee/src/main/java/TestHBase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/es_springboot/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/es_springboot/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/es_springboot/src/main/java/com/neilfoc/es_springboot/config/RestClientConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/es_springboot/src/main/java/com/neilfoc/es_springboot/config/RestClientConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/es_springboot/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/es_springboot/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/es_springboot/src/test/java/com/neilfoc/es_springboot/TestRestClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/es_springboot/src/test/java/com/neilfoc/es_springboot/TestRestClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/java-learn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java-learn.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/javase/src/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/javase/src/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javase/src/tests/HttpClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/javase/src/tests/HttpClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/javase/src/tests/copyTest/Account.java" beforeDir="false" afterPath="$PROJECT_DIR$/javase/src/tests/copyTest/Account.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -74,18 +78,22 @@
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML4 File" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/javase/src" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../我的文档/11105157/Desktop/fontTest.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../feedscontent-mng" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.23206279" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Rainbow Brackets" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -94,40 +102,17 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\project\java-learn" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="copyTest" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\project\java-learn\algorithm\src\java" />
     </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="copyTest" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.Test">
-    <configuration name="HttpClientTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="tests.HttpClientTest" />
-      <module name="javase" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Test (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="tests.copyTest.Test" />
-      <module name="javase" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tests.copyTest.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.TestRestClient.test">
     <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Test" />
       <module name="javase" />
@@ -135,45 +120,87 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestHBase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="TestHBase" />
-      <module name="Javaee" />
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PropertiesCopierTest.copyProperties" type="JUnit" factoryName="JUnit" singleton="false" temporary="true" nameIsGenerated="true">
-      <module name="javase" />
-      <useClassPathOnly />
+    <configuration name="TestQuery.testFilterQuery" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elasticsearch" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestQuery" />
+      <option name="METHOD_NAME" value="testFilterQuery" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestQuery.testHighlight" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elasticsearch" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestQuery" />
+      <option name="METHOD_NAME" value="testHighlight" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestQuery.testHighlight1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="elasticsearch" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TestQuery" />
+      <option name="METHOD_NAME" value="testHighlight1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestRestClient.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="es_springboot" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tests.copyTest.*" />
+          <option name="PATTERN" value="com.neilfoc.es_springboot.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="copyTest" />
-      <option name="MAIN_CLASS_NAME" value="tests.copyTest.PropertiesCopierTest" />
-      <option name="METHOD_NAME" value="copyProperties" />
+      <option name="PACKAGE_NAME" value="com.neilfoc.es_springboot" />
+      <option name="MAIN_CLASS_NAME" value="com.neilfoc.es_springboot.TestRestClient" />
+      <option name="METHOD_NAME" value="test" />
       <option name="TEST_OBJECT" value="method" />
-      <option name="PARAMETERS" value="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EsSpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="es_springboot" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.neilfoc.es_springboot.EsSpringbootApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <list>
       <item itemvalue="Application.Test" />
-      <item itemvalue="Application.HttpClientTest" />
-      <item itemvalue="Application.Test (1)" />
-      <item itemvalue="Application.TestHBase" />
-      <item itemvalue="JUnit.PropertiesCopierTest.copyProperties" />
+      <item itemvalue="JUnit.TestQuery.testHighlight" />
+      <item itemvalue="JUnit.TestQuery.testHighlight1" />
+      <item itemvalue="JUnit.TestQuery.testFilterQuery" />
+      <item itemvalue="JUnit.TestRestClient.test" />
+      <item itemvalue="Spring Boot.EsSpringbootApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestRestClient.test" />
         <item itemvalue="Application.Test" />
-        <item itemvalue="Application.TestHBase" />
-        <item itemvalue="Application.Test (1)" />
-        <item itemvalue="Application.HttpClientTest" />
-        <item itemvalue="JUnit.PropertiesCopierTest.copyProperties" />
+        <item itemvalue="JUnit.TestQuery.testFilterQuery" />
+        <item itemvalue="JUnit.TestQuery.testHighlight1" />
+        <item itemvalue="JUnit.TestQuery.testHighlight" />
       </list>
     </recent_temporary>
   </component>
@@ -259,7 +286,12 @@
       <workItem from="1617874468412" duration="5508000" />
       <workItem from="1617958560464" duration="122000" />
       <workItem from="1618192373052" duration="2714000" />
-      <workItem from="1618280361543" duration="596000" />
+      <workItem from="1618280361543" duration="7894000" />
+      <workItem from="1618390232959" duration="14559000" />
+      <workItem from="1618477761324" duration="3495000" />
+      <workItem from="1618487247481" duration="676000" />
+      <workItem from="1618491320568" duration="233000" />
+      <workItem from="1618491563762" duration="5029000" />
     </task>
     <servers />
   </component>

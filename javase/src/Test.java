@@ -152,7 +152,7 @@ public class Test {
         System.out.println(Bytes.toBytes(16));*/
 
         //测试JSON
-        Account account = new Account();
+        /*Account account = new Account();
         account.setName("name");
         account.setAge(26);
         account.setMoney(1);
@@ -164,7 +164,11 @@ public class Test {
         Account account1 = JSON.toJavaObject(jsonObject, Account.class);
         Account account2 = JSON.parseObject("{\"money\":1.0,\"h\":180,\"name\":\"name\",\"age\":26}", Account.class);
         System.out.println(JSON.toJSONString(account1));
-        System.out.println(JSON.toJSONString(account2));
+        System.out.println(JSON.toJSONString(account2));*/
+
+        SimpleDateFormat simpleDateFormat_YYMMDD = new SimpleDateFormat("yyyyMMdd");
+        String indexName = String.format("%s_%s", "video_content_index",simpleDateFormat_YYMMDD.format(new Date()));
+        System.out.println(indexName);
     }
 
 
