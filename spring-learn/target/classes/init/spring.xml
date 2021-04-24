@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+        标签bean:管理组件对象的创建，完成IOC 控制反转
+            属性class:指定对象的全限定名  id:指定spring管理该对象的唯一标识
+    -->
+
+    <bean class="init.UserDaoImpl" id="userDaoImpl"></bean>
+
+    <bean class="init.UserServiceImpl" id="userService">
+        <!--
+            标签property：管理对象的属性赋值，完成DI 依赖注入
+                属性name:给对象中的某个成员变量名赋值 ref:配置文件中对应的bean的id名
+        -->
+        <property name="userDao" ref="userDaoImpl"></property>
+    </bean>
+
+
+</beans>
