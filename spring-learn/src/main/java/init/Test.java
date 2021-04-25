@@ -17,5 +17,15 @@ public class Test {
         UserService userService = context.getBean("userService", UserService.class);
 
         userService.save("ok");
+
+        //构造方法依赖注入
+        ConstructorDI constructorDI = context.getBean("constructorDI1", ConstructorDI.class);
+        System.out.println(constructorDI.getName());
+        System.out.println(constructorDI.getAge());
+        constructorDI.getUserDao().save("构造函数注入");
+
+        //自动注入
+        UserServiceImpl userService2 = context.getBean("userService2", UserServiceImpl.class);
+        userService2.save("自动注入");
     }
 }
