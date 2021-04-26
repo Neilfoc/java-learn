@@ -166,9 +166,10 @@ public class Test {
         System.out.println(JSON.toJSONString(account1));
         System.out.println(JSON.toJSONString(account2));*/
 
-        SimpleDateFormat simpleDateFormat_YYMMDD = new SimpleDateFormat("yyyyMMdd");
+        /*SimpleDateFormat simpleDateFormat_YYMMDD = new SimpleDateFormat("yyyyMMdd");
         String indexName = String.format("%s_%s", "video_content_index",simpleDateFormat_YYMMDD.format(new Date()));
-        System.out.println(indexName);
+        System.out.println(indexName);*/
+
     }
 
 

@@ -14,14 +14,16 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import org.apache.commons.httpclient.DefaultHttpMethodRetryHandler;
+
 import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.HttpStatus;
 import org.apache.commons.httpclient.NameValuePair;
 import org.apache.commons.httpclient.methods.GetMethod;
 import org.apache.commons.httpclient.methods.PostMethod;
 import org.apache.commons.httpclient.params.HttpMethodParams;
-public class HttpClient3Test {
+import org.apache.hadoop.hbase.shaded.org.apache.commons.httpclient.DefaultHttpMethodRetryHandler;
+
+public class HttpClient3 {
     public static String doGet(String url) {
         // 输入流
         InputStream is = null;
@@ -35,9 +37,9 @@ public class HttpClient3Test {
         // 创建一个Get方法实例对象
         GetMethod getMethod = new GetMethod(url);
         // 设置get请求超时为60000毫秒
-        getMethod.getParams().setParameter(HttpMethodParams.SO_TIMEOUT, 60000);
+        getMethod.getParams().setParameter(org.apache.hadoop.hbase.shaded.org.apache.commons.httpclient.params.HttpMethodParams.SO_TIMEOUT, 60000);
         // 设置请求重试机制，默认重试次数：3次，参数设置为true，重试机制可用，false相反
-        getMethod.getParams().setParameter(HttpMethodParams.RETRY_HANDLER, new DefaultHttpMethodRetryHandler(3, true));
+        getMethod.getParams().setParameter(org.apache.hadoop.hbase.shaded.org.apache.commons.httpclient.params.HttpMethodParams.RETRY_HANDLER, new DefaultHttpMethodRetryHandler(3, true));
         try {
             // 执行Get方法
             int statusCode = httpClient.executeMethod(getMethod);

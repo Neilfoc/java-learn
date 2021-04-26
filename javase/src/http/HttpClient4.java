@@ -25,7 +25,7 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
-public class HttpClient4Test {
+public class HttpClient4 {
     public static String doGet(String url) {
         CloseableHttpClient httpClient = null;
         CloseableHttpResponse response = null;
