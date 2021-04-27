@@ -36,6 +36,8 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static static1.StaticMethodClass.xixi;
+
 /**
  * @author 11105157
  * @Description
@@ -170,6 +172,7 @@ public class Test {
         String indexName = String.format("%s_%s", "video_content_index",simpleDateFormat_YYMMDD.format(new Date()));
         System.out.println(indexName);*/
 
+        xixi();
     }
 
 
