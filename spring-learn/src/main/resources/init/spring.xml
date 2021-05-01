@@ -50,7 +50,7 @@
             使用的属性：autowire
             autowire=”byName”
             根据注入的属性名与配置文件中bean的id匹配,一致则注入,不一致报错
-            autowire=”byType”
+            autowire=”byType” d
             根据注入的属性类型,与配置文件中的类型匹配,类型一致注入(在多个实现类时,会产生歧义)
             注意: 无论使用以上那种方式注入都需要为属性提供set方法
         -->

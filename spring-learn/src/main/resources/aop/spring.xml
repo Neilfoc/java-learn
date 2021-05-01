@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="userService" class="aop.proxy.UserServiceImpl" ></bean>
+
+
+    <!--问题:如果为每一个service开发一个静态代理类,不仅没有减轻工作量,甚至让我们的工作量多了一倍不止怎么解决以上这个问题呢?
+    解决方案: 为业务层在运行过程中动态创建代理类,通过动态代理类去解决我们现有业务层中业务代码冗余的问题.-->
+    <bean class="aop.proxy.UserServiceStaticProxy" id="userServiceStaticProxy">
+        <property name="userService" ref="userService"></property>
+    </bean>
+</beans>
