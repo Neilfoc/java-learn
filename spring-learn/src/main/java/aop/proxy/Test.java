@@ -1,8 +1,6 @@
-package aop;
+package aop.proxy;
 
-import aop.proxy.UserService;
-import aop.proxy.UserServiceImpl;
-import aop.proxy.UserServiceStaticProxy;
+import aop.EmpService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.lang.reflect.InvocationHandler;
@@ -14,7 +12,12 @@ public class Test {
 		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("aop/spring.xml");
 		UserServiceStaticProxy userServiceStaticProxy = context.getBean("userServiceStaticProxy", UserServiceStaticProxy.class);
 		//userServiceStaticProxy.save("save");
-		testDynamicProxy();
+		//testDynamicProxy();
+
+		//aop
+		EmpService empService = context.getBean("empService", EmpService.class);
+		System.out.println(empService.getClass());
+		empService.save("save");
 	}
 
 	//测试动态代理 反射
@@ -25,7 +28,7 @@ public class Test {
 		ClassLoader contextClassLoader = Thread.currentThread().getContextClassLoader();
 		System.out.println(contextClassLoader);
 
-		//参数2:
+		//参数2:代理的接口类型数组
 		Class[] classes =  new Class[]{UserService.class};
 
 		//参数3:new InvocationHandler()

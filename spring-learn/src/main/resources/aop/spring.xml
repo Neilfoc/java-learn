@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/aop
+                           http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <bean id="userService" class="aop.proxy.UserServiceImpl" ></bean>
 
@@ -11,4 +15,27 @@
     <bean class="aop.proxy.UserServiceStaticProxy" id="userServiceStaticProxy">
         <property name="userService" ref="userService"></property>
     </bean>
+
+
+    <!--aop-->
+    <!--AOP面向切面编程：底层实现依赖于动态代理。可以通过 对象.getClass() 判断是普通类还是代理类
+    步骤：1.开发通知类（附加功能，有前置、后置、异常、环绕等不同的通知） 2.设置切入点  3.组装成切面-->
+    <bean class="aop.EmpServiceImpl" id="empService"></bean>
+    <!--配置通知bean-->
+    <bean class="aop.BeforeAdvice" id="beforeAdvice"></bean>
+    <!--配置切面-->
+    <aop:config>
+        <!--配置切入点：
+            id:切入点的唯一标识
+            expression：指定切入到哪个类的哪些方法
+                        execution(返回值 包.类名.方法名(..))-->
+        <aop:pointcut id="pc" expression="execution(* aop.EmpServiceImpl.*(..))"/>
+        <!--配置通切面：通知 + 切入点
+            advice-ref：通知的id
+            pointcut-ref：切入点的id
+            -->
+        <aop:advisor advice-ref="beforeAdvice" pointcut-ref="pc"></aop:advisor>
+    </aop:config>
+
+
 </beans>
