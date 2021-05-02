@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--复杂对象: 类中没有构造方法,或者构造方法不能调用，比如接口类型或抽象类-->
+
+    <bean class="complexbean.CalendarFactory" id="calendar"></bean>
+</beans>

@@ -1,42 +1,8 @@
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONObject;
-import com.google.common.collect.Lists;
-import lombok.Data;
-import lombok.SneakyThrows;
-import lombok.extern.java.Log;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.oval.constraint.NotBlank;
 import net.sf.oval.constraint.NotNull;
-import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.hadoop.hbase.util.Bytes;
-import org.apache.http.client.config.RequestConfig;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.utils.DateUtils;
-import org.apache.http.entity.ByteArrayEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClients;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.runner.RunWith;
-import org.junit.runners.Parameterized;
-import redis.clients.jedis.Jedis;
-import redis.clients.jedis.Pipeline;
-import redis.clients.jedis.Response;
-import tests.copyTest.Account;
 
-import java.io.*;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import static static1.StaticMethodClass.xixi;
+import java.io.IOException;
 
 /**
  * @author 11105157
@@ -172,7 +138,9 @@ public class Test {
         String indexName = String.format("%s_%s", "video_content_index",simpleDateFormat_YYMMDD.format(new Date()));
         System.out.println(indexName);*/
 
-        xixi();
+        //xixi();
+
+
     }
 
 
