@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="mybatis.SqlSessionFactoryBean" id="sqlSessionFactory"></bean>
+
+    <!--创建数据源对象 druid c3p0 dbcp-->
+    <bean id="ds" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/test"/>
+        <property name="username" value="root"/>
+        <property name="password" value="123"/>
+    </bean>
+
+    <!--官方的SqlSessionFactoryBean-->
+    <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory2">
+        <!--
+        注意：原来自己创建是用mybatis-config.xml（包含数据源和mapper） 现在需要拆分开来，单独的数据源配置和mapper配置
+        不能这么写：<property name="configLocation" value="mybatis/mybatis-config.xml"></property>
+        -->
+        <property name="dataSource" ref="ds"/>
+    </bean>
+</beans>
