@@ -2,7 +2,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+    <!--创建自己写的SqlSessionFactoryBean-->
     <bean class="mybatis.SqlSessionFactoryBean" id="sqlSessionFactory"></bean>
 
     <!--创建数据源对象 druid c3p0 dbcp-->
@@ -13,12 +13,24 @@
         <property name="password" value="123"/>
     </bean>
 
-    <!--官方的SqlSessionFactoryBean-->
+    <!--创建官方的SqlSessionFactoryBean-->
     <bean class="org.mybatis.spring.SqlSessionFactoryBean" id="sqlSessionFactory2">
         <!--
         注意：原来自己创建是用mybatis-config.xml（包含数据源和mapper） 现在需要拆分开来，单独的数据源配置和mapper配置
         不能这么写：<property name="configLocation" value="mybatis/mybatis-config.xml"></property>
         -->
         <property name="dataSource" ref="ds"/>
+
+        <property name="mapperLocations" >
+            <array>
+                <value>classpath:mybatis/UserDAOMapper.xml</value>
+            </array>
+        </property>
+    </bean>
+
+    <!--创建DAO-->
+    <bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="sqlSessionFactory" ref="sqlSessionFactory2"/>
+        <property name="mapperInterface" value="mybatis.UserDao"/>
     </bean>
 </beans>
