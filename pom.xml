@@ -13,7 +13,6 @@
         <module>javase</module>
         <module>Javaee</module>
         <module>elasticsearch</module>
-        <module>spring-learn</module>
     </modules>
 
     <properties>

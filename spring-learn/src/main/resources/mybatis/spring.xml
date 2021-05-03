@@ -2,8 +2,11 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
     <!--创建自己写的SqlSessionFactoryBean-->
     <bean class="mybatis.SqlSessionFactoryBean" id="sqlSessionFactory"></bean>
+
+<!--======================================================================================================-->
 
     <!--创建数据源对象 druid c3p0 dbcp-->
     <bean id="ds" class="com.alibaba.druid.pool.DruidDataSource">
@@ -32,5 +35,18 @@
     <bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
         <property name="sqlSessionFactory" ref="sqlSessionFactory2"/>
         <property name="mapperInterface" value="mybatis.UserDao"/>
+    </bean>
+
+    <!--创建service-->
+    <bean class="mybatis.service.UserServiceImpl" id="userService">
+        <property name="userDao" ref="userDao"></property>
+        <property name="transactionManager" ref="transactionManager"></property>
+    </bean>
+
+    <!--数据源事务管理器-->
+    <!--笔记：在service层处理事务的提交和回滚：最底层是使用Connection对象。
+    但是在同一个线程中需要保证service层和dao层使用的是同一个connection进行commit和rollback，使用ThreadLocal来实现。现在可以使用Spring-Mybatis提供的DataSourecTransactionManager（数据源事务管理器）-->
+    <bean class="org.springframework.jdbc.datasource.DataSourceTransactionManager" id="transactionManager">
+        <property name="dataSource" ref="ds"></property>
     </bean>
 </beans>

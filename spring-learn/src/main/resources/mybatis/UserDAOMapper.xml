@@ -5,4 +5,8 @@
         select id,name,age,bir from t_user
     </select>
 
+    <insert id="save" parameterType="mybatis.User">
+        insert into t_user values(#{id},#{name},#{age},#{bir})
+    </insert>
+
 </mapper>
