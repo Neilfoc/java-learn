@@ -1,4 +1,4 @@
-package scale;
+package scope;
 
 public class TagDaoImpl implements TagDao {
 	@Override

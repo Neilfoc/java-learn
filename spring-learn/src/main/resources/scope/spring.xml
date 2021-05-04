@@ -11,5 +11,5 @@
     何时创建 随着工厂启动,所有单例bean随之创建 多例的bean,每次使用时创建
     何时销毁 随着工厂关闭,所有单例bean随之销毁( 注意: spring对多例bean管理松散,不会负责多例bean的销毁)
     -->
-    <bean class="scale.TagDaoImpl" id="tagDao" scope="singleton" init-method="init" destroy-method="destroy"></bean>
+    <bean class="scope.TagDaoImpl" id="tagDao" scope="singleton" init-method="init" destroy-method="destroy"></bean>
 </beans>

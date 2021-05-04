@@ -1,4 +1,4 @@
-package scale;
+package scope;
 
 public interface TagDao {
 

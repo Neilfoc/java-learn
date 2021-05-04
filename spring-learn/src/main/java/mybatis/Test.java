@@ -5,6 +5,7 @@ import com.alibaba.druid.pool.DruidPooledConnection;
 import mybatis.service.UserService;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.sql.Connection;
@@ -15,7 +16,7 @@ import java.util.UUID;
 
 public class Test {
 	public static void main(String[] args) {
-		ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("mybatis/spring.xml");
+		ApplicationContext context = new ClassPathXmlApplicationContext("mybatis/spring.xml");
 		/*SqlSessionFactory sqlSessionFactory = context.getBean("sqlSessionFactory", SqlSessionFactory.class);
 		SqlSession sqlSession = sqlSessionFactory.openSession();
 		System.out.println(sqlSession);
@@ -30,9 +31,10 @@ public class Test {
 		UserService userService = context.getBean("userService", UserService.class);
 		User user = new User();
 		user.setId(UUID.randomUUID().toString().replaceAll("-",""));
-		user.setName("neil");
-		user.setAge(18);
+		user.setName("neilfoc");
+		user.setAge(11);
 		user.setBir(new Date());
-		userService.save(user);
+		//userService.save(user);
+		System.out.println(userService);
 	}
 }
