@@ -20,7 +20,7 @@ public class Test {
         user.setName("小强");
         user.setAge(20);
         user.setBir(new Date());
-        //userServiceImplAOP.save(user);
-        System.out.println(userServiceImplAOP);
+        userServiceImplAOP.save(user);
+        //System.out.println(userServiceImplAOP);
     }
 }

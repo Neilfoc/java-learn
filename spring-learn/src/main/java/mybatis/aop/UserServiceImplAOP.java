@@ -21,6 +21,6 @@ public class UserServiceImplAOP implements UserService {
     public void save(User user) {
         userDao.save(user);
         //抛出异常
-        int i = 1 / 0;
+        //int i = 1 / 0;
     }
 }
