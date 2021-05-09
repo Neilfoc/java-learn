@@ -154,6 +154,13 @@
             <version>1.18.12</version>
         </dependency>
 
+        <!--单元测试-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13</version>
+            <scope>compile</scope>
+        </dependency>
 
     </dependencies>
 
