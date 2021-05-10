@@ -1,13 +1,11 @@
+import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.oval.constraint.NotBlank;
 import net.sf.oval.constraint.NotNull;
 import tests.copyTest.Account;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Queue;
+import java.util.*;
 
 import static static1.StaticMethodClass.xixi;
 
@@ -145,10 +143,10 @@ public class Test {
         String indexName = String.format("%s_%s", "video_content_index",simpleDateFormat_YYMMDD.format(new Date()));
         System.out.println(indexName);*/
 
-        List<Integer> list = new ArrayList<>();
-        System.out.println(list.size());
-        list.add(null);
-        System.out.println(list.size());
+        Deque<Integer> deque = new LinkedList<>();
+        deque.addFirst(1);
+        deque.addFirst(2);
+        System.out.println(JSON.toJSONString(deque));
     }
 
 
