@@ -10,7 +10,6 @@ import org.apache.http.util.EntityUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 /**
  * @author 11105157

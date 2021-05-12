@@ -14,9 +14,9 @@ public class MyThread implements Runnable {
     public void run() {
         try {
             Thread.sleep(2000);
+            System.out.println(name+" 执行     使用:"+Thread.currentThread().getName());
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println(name+" 执行     使用:"+Thread.currentThread().getName());
     }
 }

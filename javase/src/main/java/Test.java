@@ -2,12 +2,9 @@ import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.oval.constraint.NotBlank;
 import net.sf.oval.constraint.NotNull;
-import tests.copyTest.Account;
 
 import java.io.IOException;
 import java.util.*;
-
-import static static1.StaticMethodClass.xixi;
 
 /**
  * @author 11105157

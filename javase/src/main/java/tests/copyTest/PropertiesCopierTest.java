@@ -88,4 +88,16 @@ public class PropertiesCopierTest {
         System.out.println("测试结果：");
         System.out.println(resultBuilder);
     }
+
+    /**
+     * 测试结果：
+     * |  实现  |  100  |  1000  |  10000  | 100000 | 1000000 |
+     * |GetSet|0.0381|0.2386|0.4746|2.5031|10.2016|
+     * |StaticCglibBeanCopier|0.0313|0.1618|0.7402|3.2075|11.3922|
+     * |CglibBeanCopier|1.4165|7.6218|15.6573|66.8553|98.4826|
+     * |SpringBeanUtils|84.6255|7.4473|33.3496|51.503|217.7573|
+     * |CommonsPropertyUtils|63.026|14.1877|40.2479|130.8267|1179.3676|
+     * |CommonsBeanUtils|1.8235|10.3109|40.1515|255.7462|2505.9367|
+     */
+
 }

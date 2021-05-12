@@ -27,7 +27,12 @@ public class RejectPolicyTest {
 
         for (int i = 1; i <= 6; i++) {
             System.out.println("添加第" + i + "个任务");
-            executor.execute(new MyThread("线程" + i));
+            try {
+
+                executor.execute(new MyThread("线程" + i));
+            } catch (Exception e) {
+                System.out.println("抛拒绝异常了："+e.getMessage());
+            }
             Iterator iterator = executor.getQueue().iterator();
             while (iterator.hasNext()) {
                 MyThread thread = (MyThread) iterator.next();
