@@ -2,8 +2,10 @@ import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.oval.constraint.NotBlank;
 import net.sf.oval.constraint.NotNull;
+import org.apache.http.client.methods.HttpGet;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.*;
 
 /**
@@ -140,10 +142,22 @@ public class Test {
         String indexName = String.format("%s_%s", "video_content_index",simpleDateFormat_YYMMDD.format(new Date()));
         System.out.println(indexName);*/
 
-        Deque<Integer> deque = new LinkedList<>();
+        /*Deque<Integer> deque = new LinkedList<>();
         deque.addFirst(1);
         deque.addFirst(2);
-        System.out.println(JSON.toJSONString(deque));
+        System.out.println(JSON.toJSONString(deque));*/
+
+        // 测试HttpGet(url)
+        // 支持 -._~:/?#[]@!$&'()*+,;=
+        // %可以充当url编码后面接16进制
+        // 不支持 | 空格
+        // https://qastack.cn/programming/1547899/which-characters-make-a-url-invalid
+        /*String url = "http://p6-ad.bytecdn.cn/list/640x360/tos-cn-p-0015/d8c61e1d64484154a82f8e832473cb05 |%ab";
+        String encode = URLEncoder.encode(url, "UTF-8");
+        //String url = null;
+        HttpGet httpGet = new HttpGet(encode);*/
+
+        new Date(null);
     }
 
 
