@@ -2,12 +2,14 @@ import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.oval.constraint.NotBlank;
 import net.sf.oval.constraint.NotNull;
+import org.apache.commons.lang.StringUtils;
 import org.apache.http.client.methods.HttpGet;
 
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.*;
-
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 /**
  * @author 11105157
  * @Description
@@ -157,7 +159,30 @@ public class Test {
         //String url = null;
         HttpGet httpGet = new HttpGet(encode);*/
 
-        new Date(null);
+        // Java8 findFirst和filter
+        /*List<Boolean> list = new ArrayList<>();
+        list.add(false);
+        //list.add(true);
+        //list.add(true);
+        Optional<Boolean> first = list.stream().filter(a -> a).findFirst();
+        System.out.println(first.isPresent());*/
+
+
+        // findAny和findFirst
+        /*OptionalInt first1 = IntStream.range(1, 10).findAny();
+        OptionalInt first2 = IntStream.range(1, 10).parallel().findAny();
+        for (int i = 0; i < 10; i++) {
+            System.out.println(first1.getAsInt() +" " +first2.getAsInt() );
+        }*/
+
+        // leftpad
+        /*int hashCode = "neilfoc".hashCode();
+        System.out.println(hashCode);
+        int abs = Math.abs(-1832990048);
+        System.out.println(abs);
+        String leftPad = StringUtils.leftPad("-1832990048", 4, "0");
+        System.out.println(leftPad);*/
+        System.out.println("40df482ff412a26b".hashCode());
     }
 
 
