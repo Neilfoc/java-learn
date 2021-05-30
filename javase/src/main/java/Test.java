@@ -1,4 +1,5 @@
 import com.alibaba.fastjson.JSON;
+import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.oval.constraint.NotBlank;
 import net.sf.oval.constraint.NotNull;
@@ -182,7 +183,14 @@ public class Test {
         System.out.println(abs);
         String leftPad = StringUtils.leftPad("-1832990048", 4, "0");
         System.out.println(leftPad);*/
-        System.out.println("40df482ff412a26b".hashCode());
+        //System.out.println("40df482ff412a26b".hashCode());
+
+        // new String[0]
+        /*String[] strings = new String[0];
+        System.out.println(strings.length);
+        List<String> list =Lists.newArrayList("com.neilfoc.boot");
+        String[] strings1 = list.toArray(new String[0]);
+        System.out.println(strings1.length);*/
     }
 
 
