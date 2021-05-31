@@ -3,6 +3,7 @@ import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.oval.constraint.NotBlank;
 import net.sf.oval.constraint.NotNull;
+import org.apache.commons.collections.ListUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.client.methods.HttpGet;
 
@@ -191,6 +192,15 @@ public class Test {
         List<String> list =Lists.newArrayList("com.neilfoc.boot");
         String[] strings1 = list.toArray(new String[0]);
         System.out.println(strings1.length);*/
+
+        // 过滤集合的第一个元素
+        /*ArrayList<String> list = Lists.newArrayList("1", "2", "1");
+        if (list.get(0).equals("1")) {
+            list.remove(0);
+        }
+        System.out.println(JSON.toJSONString(list));*/
+
+        ListUtils
     }
 
 
