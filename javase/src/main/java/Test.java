@@ -3,6 +3,7 @@ import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.oval.constraint.NotBlank;
 import net.sf.oval.constraint.NotNull;
+import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.collections.ListUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.client.methods.HttpGet;
@@ -12,6 +13,7 @@ import java.net.URLEncoder;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+
 /**
  * @author 11105157
  * @Description
@@ -26,6 +28,11 @@ public class Test {
 
     //@SneakyThrows
     public static void main(String[] args) throws IOException {
+
+        System.out.println(DigestUtils.md5Hex("1234"));
+    }
+
+    public void hasTested() {
         /*long time = System.nanoTime();
         Thread.sleep(1000);
         // 该方法所基于的时间是随机的，但在同一个JVM中，不同的地方使用的原点时间是一样的。只能用来比较，不能用来当作时间
@@ -200,9 +207,6 @@ public class Test {
         }
         System.out.println(JSON.toJSONString(list));*/
 
-        ListUtils
     }
-
-
 
 }
