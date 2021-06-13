@@ -7,6 +7,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.collections.ListUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.client.methods.HttpGet;
+import tests.copyTest.Account;
 
 import java.io.IOException;
 import java.net.URLEncoder;
@@ -29,7 +30,7 @@ public class Test {
     //@SneakyThrows
     public static void main(String[] args) throws IOException {
 
-        System.out.println(DigestUtils.md5Hex("1234"));
+        System.out.println(DigestUtils.md5Hex("82934446b9b1903af8dff1ff904c67fc"));
     }
 
     public void hasTested() {

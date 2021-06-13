@@ -1,0 +1,6 @@
+spring:
+#  mvc:
+#    static-path-pattern: /res/** #改变静态资源访问路径（资源存放的路径不会改变） 必须将这个关掉才能加载图标http://localhost:8080/favicon.ico
+#  resources:
+#    static-locations: classpath:/haha/   #改变静态资源默认存放路径,原来的静态目录就失效了
+#    add-mappings: false  #禁用所有静态资源
