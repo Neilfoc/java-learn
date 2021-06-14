@@ -1,4 +1,7 @@
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.serializer.SerializeConfig;
+import com.alibaba.fastjson.serializer.SerializeFilter;
+import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.oval.constraint.NotBlank;
@@ -30,7 +33,10 @@ public class Test {
     //@SneakyThrows
     public static void main(String[] args) throws IOException {
 
-        System.out.println(DigestUtils.md5Hex("82934446b9b1903af8dff1ff904c67fc"));
+        //System.out.println(DigestUtils.md5Hex("82934446b9b1903af8dff1ff904c67fc"));
+
+        // json转换异常 inputStream什么的
+        //JSON.toJSONString(object, SerializeConfig.globalInstance,new SerializeFilter[0],null,10000,new SerializerFeature[0])
     }
 
     public void hasTested() {
