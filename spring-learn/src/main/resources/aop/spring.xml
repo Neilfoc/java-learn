@@ -7,6 +7,8 @@
                            http://www.springframework.org/schema/aop
                            http://www.springframework.org/schema/aop/spring-aop.xsd">
 
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
+
     <bean id="userService" class="aop.proxy.UserServiceImpl" ></bean>
 
 
@@ -37,5 +39,6 @@
         <aop:advisor advice-ref="beforeAdvice" pointcut-ref="pc"></aop:advisor>
     </aop:config>
 
+    <bean class="aop.aspect.EmpAspect" id = "empAspect"></bean>
 
 </beans>

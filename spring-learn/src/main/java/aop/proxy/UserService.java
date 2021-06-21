@@ -1,6 +1,7 @@
 package aop.proxy;
 
 public interface UserService {
+
 	public void save(String name);
 
 	public void delete(String name);

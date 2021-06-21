@@ -18,6 +18,9 @@ public class Test {
 		EmpService empService = context.getBean("empService", EmpService.class);
 		System.out.println(empService.getClass());
 		empService.save("save");
+
+		//注解aop
+		empService.find();
 	}
 
 	//测试动态代理 反射
