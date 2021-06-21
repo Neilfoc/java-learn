@@ -8,6 +8,7 @@ import net.sf.oval.constraint.NotBlank;
 import net.sf.oval.constraint.NotNull;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.collections.ListUtils;
+import org.apache.commons.collections.SetUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.http.client.methods.HttpGet;
 import tests.copyTest.Account;
@@ -15,6 +16,8 @@ import tests.copyTest.Account;
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
@@ -33,10 +36,38 @@ public class Test {
     //@SneakyThrows
     public static void main(String[] args) throws IOException {
 
-        //System.out.println(DigestUtils.md5Hex("82934446b9b1903af8dff1ff904c67fc"));
+        //System.out.println(DigestUtils.md5Hex("0522"));
 
         // json转换异常 inputStream什么的
         //JSON.toJSONString(object, SerializeConfig.globalInstance,new SerializeFilter[0],null,10000,new SerializerFeature[0])
+
+        // 替换中文
+        /*String str = "我[爱慕]浑身难受[老虎爱慕]";
+        String s = str.replaceAll("\\[[\u4e00-\u9fa5]+\\]", "a");
+        System.out.println(s);*/
+
+        // 正则表达式
+        /*String cookie = "onlyoffice_editor=9; PS_DEVICEFEATURES=maf:0 width:1920 height:1080 clientWidth:1920 clientHeight:937 pixelratio:1 touch:0 geolocation:1 websockets:1 webworkers:1 datepicker:1 dtpicker:1 timepicker:1 dnd:1 sessionstorage:1 localstorage:1 history:1 canvas:1 svg:1 postmessage:1 hc:0; bpmssotoken=Value=kwzb8Pv5iElC_sN8R9iwd4wUJeP6AyPWawnB5HLKkCL9RkMyVyCGTPucTRP2n_KtN5SEDJDMIgI*; uuc-uuid=E%252F98ojttrzWrnpf7eczIfIpog6od2V9SMl9%252FZ6fReWaKtq77OmCL0w%253D%253D; uuc-token=6HtUv6WPblQcX7RMNBF8R9%252F7c%252B5n8L2XLL%252FacaEFRyU4EDANsRa%252FCjGz%252FjrhYx5j; uuc-vlang=zh-CN; BDSP_TOKEN=a6b015c18f5262dd4e6edc5a77b4e7e6345023991b6025c022454cc52ce3e3d2; token=kwzb8Pv5iElC_sN8R9iwd4wUJeP6AyPWawnB5HLKkCL9RkMyVyCGTPucTRP2n_KtN5SEDJDMIgI*; CSRF_TOKEN=\"ZDE4MTViZDdhMmE3M2I3MTE2MTkyZmE3OTkyYWJkMTQ=\"; JSESSIONID=F11FF56D8D7409D2AA16D71C73FCCF57";
+        String cookie1 = " CSRF_TOKEN=\"ZDE4MTViZDdhMmE3M2I3MTE2MTkyZmE3OTkyYWJkMTQ=\";";
+        String reg = "(^ )" + "CSRF_TOKEN" + "=([^;]*)(;$)";
+        String reg1 = " CSRF_TOKEN=[^;]*;";
+        //String reg = "(^| )" + "CSRF_TOKEN" + "=([^;]*)(;|$)";
+        Pattern pattern = Pattern.compile(reg1);
+        Matcher matcher = pattern.matcher(cookie1);
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }*/
+
+        // subList
+        /*List<String> list = new ArrayList<String>();
+        list.add("JavaWeb编程词典");  //向列表中添加数据
+        list.add("Java编程词典");  //向列表中添加数据
+        list.add("C#编程词典");  //向列表中添加数据
+        list.add("ASP.NET编程词典");  //向列表中添加数据
+        list.add("VC编程词典");  //向列表中添加数据
+        list.add("SQL编程词典");  //向列表中添加数据
+        List<String> subList = list.subList(1, 14);  //获取子列表
+        System.out.println(subList);*/
     }
 
     public void hasTested() {
@@ -216,4 +247,17 @@ public class Test {
 
     }
 
+    //洗牌
+    public static <T> T[] randomSelected(T[] array, int num) {
+        T[] temp = Arrays.copyOf(array, array.length);// 获得一个该数组的复制
+        int length = temp.length;
+        int left = length;
+        while (length - left < num) {// length - left 为还需要计算多少次
+            int i = (int) Math.floor(Math.random() * left--);// 随机选取一个元素，left 自减，这样不会覆盖上次产生的结果，并将下次选取的范围缩小
+            T tmp = temp[i];// 将被选中的数与数组的最后一位进行调换
+            temp[i] = temp[left];
+            temp[left] = tmp;
+        }
+        return Arrays.copyOfRange(temp, 0, num > length ? length : num);// 从临时数组中复制出指定长度的数组
+    }
 }
