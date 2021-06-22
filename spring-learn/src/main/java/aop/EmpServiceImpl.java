@@ -12,7 +12,7 @@ public class EmpServiceImpl implements EmpService {
 	@Override
 	@EmpAnnotation(desc = "haode")
 	//切面注解加在Impl上，不是加在接口上
-	public String find() {
+	public String find(Emp emp) {
 		System.out.println("find name is :null");
 		return null;
 	}

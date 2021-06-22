@@ -1,5 +1,6 @@
 package aop.proxy;
 
+import aop.Emp;
 import aop.EmpService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -20,7 +21,11 @@ public class Test {
 		empService.save("save");
 
 		//注解aop
-		empService.find();
+		System.out.println("=============================");
+		Emp emp = new Emp();
+		emp.setId(123456789);
+		emp.setName("emp");
+		empService.find(emp);
 	}
 
 	//测试动态代理 反射
