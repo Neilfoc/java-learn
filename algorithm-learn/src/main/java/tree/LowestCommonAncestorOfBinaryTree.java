@@ -1,4 +1,4 @@
-package Tree;
+package tree;
 
 /**
  * @author 11105157

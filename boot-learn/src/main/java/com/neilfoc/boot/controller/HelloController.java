@@ -52,7 +52,7 @@ public class HelloController {
                                      @PathVariable Map<String, String> pv,
                                      @RequestHeader Map<String, String> header,
                                      @RequestParam MultiValueMap<String, String> params,
-                                     @CookieValue("JSESSIONID") Cookie cookie) {
+                                     @CookieValue(value = "JSESSIONID",required = false) Cookie cookie) {
 
         Map<String, Object> map = new HashMap<>();
 
