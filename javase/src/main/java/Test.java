@@ -7,10 +7,15 @@ import lombok.extern.slf4j.Slf4j;
 import net.sf.oval.constraint.NotBlank;
 import net.sf.oval.constraint.NotNull;
 import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.ListUtils;
 import org.apache.commons.collections.SetUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.http.HttpHost;
+import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
 import tests.copyTest.Account;
 
 import java.io.IOException;
@@ -20,6 +25,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * @author 11105157
@@ -35,40 +41,21 @@ public class Test {
 
     //@SneakyThrows
     public static void main(String[] args) throws IOException {
+        ArrayList<String> l1 = Lists.newArrayList("123", "345");
+        ArrayList<String> l2 = Lists.newArrayList("123", "345");
+        //boolean b = Collections.disjoint(l1, l2);
+        boolean b = l1.retainAll(l2);
+        System.out.println(b);
+        System.out.println(CollectionUtils.isNotEmpty(l1));
+        System.out.println(l2.contains(null));
 
-        //System.out.println(DigestUtils.md5Hex("0522"));
-
-        // json转换异常 inputStream什么的
-        //JSON.toJSONString(object, SerializeConfig.globalInstance,new SerializeFilter[0],null,10000,new SerializerFeature[0])
-
-        // 替换中文
-        /*String str = "我[爱慕]浑身难受[老虎爱慕]";
-        String s = str.replaceAll("\\[[\u4e00-\u9fa5]+\\]", "a");
-        System.out.println(s);*/
-
-        // 正则表达式
-        /*String cookie = "onlyoffice_editor=9; PS_DEVICEFEATURES=maf:0 width:1920 height:1080 clientWidth:1920 clientHeight:937 pixelratio:1 touch:0 geolocation:1 websockets:1 webworkers:1 datepicker:1 dtpicker:1 timepicker:1 dnd:1 sessionstorage:1 localstorage:1 history:1 canvas:1 svg:1 postmessage:1 hc:0; bpmssotoken=Value=kwzb8Pv5iElC_sN8R9iwd4wUJeP6AyPWawnB5HLKkCL9RkMyVyCGTPucTRP2n_KtN5SEDJDMIgI*; uuc-uuid=E%252F98ojttrzWrnpf7eczIfIpog6od2V9SMl9%252FZ6fReWaKtq77OmCL0w%253D%253D; uuc-token=6HtUv6WPblQcX7RMNBF8R9%252F7c%252B5n8L2XLL%252FacaEFRyU4EDANsRa%252FCjGz%252FjrhYx5j; uuc-vlang=zh-CN; BDSP_TOKEN=a6b015c18f5262dd4e6edc5a77b4e7e6345023991b6025c022454cc52ce3e3d2; token=kwzb8Pv5iElC_sN8R9iwd4wUJeP6AyPWawnB5HLKkCL9RkMyVyCGTPucTRP2n_KtN5SEDJDMIgI*; CSRF_TOKEN=\"ZDE4MTViZDdhMmE3M2I3MTE2MTkyZmE3OTkyYWJkMTQ=\"; JSESSIONID=F11FF56D8D7409D2AA16D71C73FCCF57";
-        String cookie1 = " CSRF_TOKEN=\"ZDE4MTViZDdhMmE3M2I3MTE2MTkyZmE3OTkyYWJkMTQ=\";";
-        String reg = "(^ )" + "CSRF_TOKEN" + "=([^;]*)(;$)";
-        String reg1 = " CSRF_TOKEN=[^;]*;";
-        //String reg = "(^| )" + "CSRF_TOKEN" + "=([^;]*)(;|$)";
-        Pattern pattern = Pattern.compile(reg1);
-        Matcher matcher = pattern.matcher(cookie1);
-        while (matcher.find()) {
-            System.out.println(matcher.group());
-        }*/
-
-        // subList
-        /*List<String> list = new ArrayList<String>();
-        list.add("JavaWeb编程词典");  //向列表中添加数据
-        list.add("Java编程词典");  //向列表中添加数据
-        list.add("C#编程词典");  //向列表中添加数据
-        list.add("ASP.NET编程词典");  //向列表中添加数据
-        list.add("VC编程词典");  //向列表中添加数据
-        list.add("SQL编程词典");  //向列表中添加数据
-        List<String> subList = list.subList(1, 14);  //获取子列表
-        System.out.println(subList);*/
+        int[] arr = {1,2};
+        Long time = 1630339200000L;
+        int l = (int) ((time - System.currentTimeMillis()) /1000);
+        System.out.println(l);
     }
+
+    private static HttpClientBuilder cb;
 
     public void hasTested() {
         /*long time = System.nanoTime();
@@ -245,6 +232,98 @@ public class Test {
         }
         System.out.println(JSON.toJSONString(list));*/
 
+        //System.out.println(DigestUtils.md5Hex("0522"));
+
+        // json转换异常 inputStream什么的
+        //JSON.toJSONString(object, SerializeConfig.globalInstance,new SerializeFilter[0],null,10000,new SerializerFeature[0])
+
+        // 替换中文
+        /*String str = "我[爱慕]浑身难受[老虎爱慕]";
+        String s = str.replaceAll("\\[[\u4e00-\u9fa5]+\\]", "a");
+        System.out.println(s);*/
+
+        // 正则表达式
+        /*String cookie = "onlyoffice_editor=9; PS_DEVICEFEATURES=maf:0 width:1920 height:1080 clientWidth:1920 clientHeight:937 pixelratio:1 touch:0 geolocation:1 websockets:1 webworkers:1 datepicker:1 dtpicker:1 timepicker:1 dnd:1 sessionstorage:1 localstorage:1 history:1 canvas:1 svg:1 postmessage:1 hc:0; bpmssotoken=Value=kwzb8Pv5iElC_sN8R9iwd4wUJeP6AyPWawnB5HLKkCL9RkMyVyCGTPucTRP2n_KtN5SEDJDMIgI*; uuc-uuid=E%252F98ojttrzWrnpf7eczIfIpog6od2V9SMl9%252FZ6fReWaKtq77OmCL0w%253D%253D; uuc-token=6HtUv6WPblQcX7RMNBF8R9%252F7c%252B5n8L2XLL%252FacaEFRyU4EDANsRa%252FCjGz%252FjrhYx5j; uuc-vlang=zh-CN; BDSP_TOKEN=a6b015c18f5262dd4e6edc5a77b4e7e6345023991b6025c022454cc52ce3e3d2; token=kwzb8Pv5iElC_sN8R9iwd4wUJeP6AyPWawnB5HLKkCL9RkMyVyCGTPucTRP2n_KtN5SEDJDMIgI*; CSRF_TOKEN=\"ZDE4MTViZDdhMmE3M2I3MTE2MTkyZmE3OTkyYWJkMTQ=\"; JSESSIONID=F11FF56D8D7409D2AA16D71C73FCCF57";
+        String cookie1 = " CSRF_TOKEN=\"ZDE4MTViZDdhMmE3M2I3MTE2MTkyZmE3OTkyYWJkMTQ=\";";
+        String reg = "(^ )" + "CSRF_TOKEN" + "=([^;]*)(;$)";
+        String reg1 = " CSRF_TOKEN=[^;]*;";
+        //String reg = "(^| )" + "CSRF_TOKEN" + "=([^;]*)(;|$)";
+        Pattern pattern = Pattern.compile(reg1);
+        Matcher matcher = pattern.matcher(cookie1);
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }*/
+
+        // subList
+        /*List<String> list = new ArrayList<String>();
+        list.add("JavaWeb编程词典");  //向列表中添加数据
+        list.add("Java编程词典");  //向列表中添加数据
+        list.add("C#编程词典");  //向列表中添加数据
+        list.add("ASP.NET编程词典");  //向列表中添加数据
+        list.add("VC编程词典");  //向列表中添加数据
+        list.add("SQL编程词典");  //向列表中添加数据
+        List<String> subList = list.subList(1, 14);  //获取子列表
+        System.out.println(subList);*/
+
+        /*String str = "{\"secondId\":0,\"musicIds\":\"2306\"}";
+        Map map = JSON.parseObject(str, Map.class);
+        if (StringUtils.isNotEmpty(map.get("secondId")+"")) {
+            System.out.println("xx");
+        }*/
+
+        /*Map<String, String> map = new HashMap<>();
+        map.put(null, "1");
+        System.out.println(map.get(null));*/
+        //JSON.toJSONString(null);
+
+        /*Person p1 = new Person(111, "a", 111);
+        Person p2 = new Person(122, "b", 122);
+        Person p3 = new Person(133, "a", 133);
+        List<Person> list = Lists.newArrayList(p1, p2, p3);
+        Map<String, List<Person>> collect = list.stream().collect(Collectors.groupingBy(Person::getName));
+        System.out.println(JSON.toJSONString(collect));*/
+
+        /* ArrayList<String> list = Lists.newArrayList("abc1", "abc2", "abc3");
+        System.out.println(JSON.toJSONString(list));
+        System.out.println(list.toString());
+        final String s = JSON.toJSONString(list);
+        final List<String> strings = JSON.parseArray(list.toString(), String.class);
+        System.out.println(strings);
+        System.out.println(JSON.toJSONString(strings));*/
+
+        /*Person p1 = new Person(1, "a", 0);
+        Person p2 = new Person(2, "b", 122);
+        Person p3 = new Person(3, "c", 0);
+        Person p4 = new Person(4, "a", 133);
+        ArrayList<Person> list = Lists.newArrayList(p1, p2, p3, p4);
+        List<Person> c1 = new ArrayList<>();
+        List<Person> c0 = new ArrayList<>();
+        for (Person p : list) {
+            if (p.getMoney() == 0) {
+                c0.add(p);
+            }else {
+                c1.add(p);
+            }
+        }
+        c1.addAll(c0);
+        System.out.println(JSON.toJSONString(c1));*/
+
+        /*ArrayList<String> words = Lists.newArrayList("Hello", "World");
+        List<String> collect = words.stream()
+                .flatMap(word -> Arrays.asList(word.split("")).stream())
+                .distinct()
+                .collect(Collectors.toList());
+        System.out.println(collect);
+
+        List<Integer> a=new ArrayList<>();
+        a.add(1);
+        a.add(2);
+        List<Integer> b=new ArrayList<>();
+        b.add(3);
+        b.add(4);
+        List<Integer> figures= Stream.of(a,b)
+                .flatMap(u->u.stream())
+                .collect(Collectors.toList());*/
     }
 
     //洗牌

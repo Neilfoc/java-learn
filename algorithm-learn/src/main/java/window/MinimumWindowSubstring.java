@@ -10,9 +10,16 @@ import java.util.Map;
  * @Description
  * @Date 2021/7/22
  */
-// 76
+// 76 最小覆盖子串
 // 滑动窗口是使用左右指针，通过遍历的方法，不需要使用递归
 // 涉及到字符串和字符char的，感觉使用C++比较方便
+
+/**
+ * 1、当移动 right 扩大窗口，【即加入字符时，应该更新哪些数据】？valid，window
+ * 2、什么条件下，窗口应该暂停扩大，开始移动 left 缩小窗口？
+ * 3、当移动 left 缩小窗口，【即移出字符时，应该更新哪些数据】？valid，window
+ * 4、我们要的结果应该在扩大窗口时还是缩小窗口时进行更新？【结果的返回受窗口缩小条件影响】
+  */
 public class MinimumWindowSubstring {
 
     public String minWindow(String s, String t) {

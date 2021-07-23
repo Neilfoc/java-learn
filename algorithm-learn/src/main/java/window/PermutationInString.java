@@ -10,9 +10,12 @@ import java.util.Map;
  * @Description
  * @Date 2021/7/22
  */
-// 567
+// 567 字符串排列
 public class PermutationInString {
     public boolean checkInclusion(String s1, String s2) {
+        if(s1.length()>s2.length()){
+            return false;
+        }
         char[] s1s = s1.toCharArray();
         char[] s2s = s2.toCharArray();
         Map<Character,Integer> need = new HashMap<>();
@@ -42,8 +45,8 @@ public class PermutationInString {
                     valid++;
                 }
             }
-            left++;
             char d = s2s[left];
+            left++;
             if (need.containsKey(d)) {
                 window.put(d, window.getOrDefault(d, 0) - 1);
                 if (window.get(d).equals(need.get(d) - 1)) {
@@ -60,7 +63,7 @@ public class PermutationInString {
     @Test
     public void test(){
         String s1 = "ab";
-        String s2 = "eidbaooo";
+        String s2 = "a";
         boolean b = checkInclusion(s1, s2);
         System.out.println(b);
     }
