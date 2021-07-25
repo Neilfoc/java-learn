@@ -7,12 +7,13 @@ import lombok.Data;
  * @Description
  * @Date 2021/7/23
  */
-//用一个parent数组表示自己的父亲，初始值时自己
-@Data
+//用一个parent数组表示自己的父亲，初始值：自己
 public class UF {
+    // 记录连通分量个数
     private int count;
-
+    // 存储若干棵树
     private int[] parent;
+    // 记录树的“重量”
     private int[] size;
 
     public UF(int n) {
@@ -32,12 +33,12 @@ public class UF {
         if (pf == qf) {
             return;
         }
-        if (size[p] > size[q]) {
-            parent[q] = pf;
-            size[p] += size[q];
+        if (size[pf] > size[qf]) {
+            parent[qf] = pf;
+            size[pf] += size[qf];
         } else {
-            parent[p] = qf;
-            size[q] += size[p];
+            parent[pf] = qf;
+            size[qf] += size[pf];
         }
         count--;
     }
@@ -64,5 +65,9 @@ public class UF {
             pf = parent[p];
         }
         return pf;
+    }
+
+    public int[] getParent(){
+        return parent;
     }
 }

@@ -22,11 +22,11 @@ public class SurroundedRegions {
         for (int i = 0; i < n; i++) {
             int p = 0 * n + i;
             if (board[0][i] == 'O') {
-                uf.union(p,dummy);
+                uf.union(p, dummy);
             }
             int q = (m - 1) * n + i;
-            if (board[m-1][i] == 'O') {
-                uf.union(q,dummy);
+            if (board[m - 1][i] == 'O') {
+                uf.union(q, dummy);
             }
         }
 
@@ -34,11 +34,11 @@ public class SurroundedRegions {
         for (int i = 0; i < m; i++) {
             int p = i * n + 0;
             if (board[i][0] == 'O') {
-                uf.union(p,dummy);
+                uf.union(p, dummy);
             }
             int q = i * n + n - 1;
-            if (board[i][n-1] == 'O') {
-                uf.union(q,dummy);
+            if (board[i][n - 1] == 'O') {
+                uf.union(q, dummy);
             }
         }
 
@@ -53,6 +53,7 @@ public class SurroundedRegions {
                         if (board[x][y] == 'O') {
                             if (uf.connected(x * n + y, dummy)) {
                                 uf.union(i * n + j, dummy);
+                            } else {
                             }
                             uf.union(i * n + j, x * n + y);
                         }
@@ -60,7 +61,7 @@ public class SurroundedRegions {
                 }
             }
         }
-        System.out.println(JSON.toJSONString(uf.getParent()));
+        //System.out.println(JSON.toJSONString(uf.getParent()));
 
         // 遍历board，将没联通的O转成X
         for (int i = 0; i < m; i++) {
@@ -75,7 +76,7 @@ public class SurroundedRegions {
     }
 
     @Test
-    public void test(){
+    public void test() {
         //char[][] board = {{'X', 'X', 'X', 'X'}, {'X', 'O', 'O', 'X'}, {'X', 'X', 'O', 'X'}, {'X', 'O', 'X', 'X'}};
         // [["X","X","X","X"],["X","X","X","X"],["X","X","X","X"],["X","O","X","X"]]
         // input [["O","X","X","O","X"],["X","O","O","X","O"],["X","O","X","O","X"],["O","X","O","O","O"],["X","X","O","X","O"]]
@@ -83,5 +84,5 @@ public class SurroundedRegions {
         //output [["O","X","X","O","X"],["X","X","X","X","O"],["X","X","X","O","X"],["O","X","O","O","O"],["X","X","O","X","O"]]
         solve(board);
         System.out.println(JSON.toJSONString(board));
-     }
+    }
 }
