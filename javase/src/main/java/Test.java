@@ -41,18 +41,25 @@ public class Test {
 
     //@SneakyThrows
     public static void main(String[] args) throws IOException {
-        ArrayList<String> l1 = Lists.newArrayList("123", "345");
-        ArrayList<String> l2 = Lists.newArrayList("123", "345");
+        //ArrayList<String> l1 = Lists.newArrayList("123", "345");
+        //ArrayList<String> l2 = Lists.newArrayList("123", "345");
         //boolean b = Collections.disjoint(l1, l2);
-        boolean b = l1.retainAll(l2);
-        System.out.println(b);
-        System.out.println(CollectionUtils.isNotEmpty(l1));
-        System.out.println(l2.contains(null));
+        //boolean b = l1.retainAll(l2);
+        //System.out.println(b);
+        //System.out.println(CollectionUtils.isNotEmpty(l1));
+        //System.out.println(l2.contains(null));
+        //
+        //int[] arr = {1,2};
+        //Long time = 1630339200000L;
+        //int l = (int) ((time - System.currentTimeMillis()) /1000);
+        //System.out.println(l);
+        //
+        //int[][] arr1 = new int[0][1];
+        //System.out.println(arr1[0].length);
 
-        int[] arr = {1,2};
-        Long time = 1630339200000L;
-        int l = (int) ((time - System.currentTimeMillis()) /1000);
-        System.out.println(l);
+        String[] s = "江苏_".split("_");
+        System.out.println(s.length);
+        System.out.println(JSON.toJSONString(s));
     }
 
     private static HttpClientBuilder cb;
