@@ -57,9 +57,12 @@ public class Test {
         //int[][] arr1 = new int[0][1];
         //System.out.println(arr1[0].length);
 
-        String[] s = "江苏_".split("_");
-        System.out.println(s.length);
-        System.out.println(JSON.toJSONString(s));
+        //String[] s = "江苏_".split("_");
+        //System.out.println(s.length);
+        //System.out.println(JSON.toJSONString(s));
+
+        Pattern pattern = Pattern.compile("\\d+");
+        System.out.println(pattern.pattern());
     }
 
     private static HttpClientBuilder cb;

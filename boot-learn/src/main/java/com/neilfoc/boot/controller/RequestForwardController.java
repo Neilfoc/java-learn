@@ -30,6 +30,7 @@ public class RequestForwardController {
     }
 
     @GetMapping("/params")
+    //测试map、model参数如何最后塞到request的attribute中，结果是转发
     public String complexParam(Map<String, Object> map,
                                Model model,
                                HttpServletRequest request,
@@ -44,13 +45,14 @@ public class RequestForwardController {
 
     @RequestMapping("/success")
     @ResponseBody
-    public Map<String, Object> success(@RequestAttribute(value = "msg", required = false) String msg,
+    public Map<String, Object> success(@RequestAttribute(value = "msg", required = false) String msg,// required = false表示不是必传
                                        HttpServletRequest request) {
         Map<String, Object> map = new HashMap<>();
         map.put("msg", msg);
         //map.put("request", request);//写这一行会报错
         //map.put("request", JSON.toJSONString(request));//写这一行也会报错
         map.put("request", request.getAttribute("msg"));
+        // map和model里面的东西会放在HttpServletRequest的attribute里。
         map.put("attr1", request.getAttribute("attr1"));
         map.put("attr2", request.getAttribute("attr2"));
         map.put("attr3", request.getAttribute("attr3"));
