@@ -61,8 +61,10 @@ public class Test {
         //System.out.println(s.length);
         //System.out.println(JSON.toJSONString(s));
 
-        Pattern pattern = Pattern.compile("\\d+");
-        System.out.println(pattern.pattern());
+        //Pattern pattern = Pattern.compile("\\d+");
+        //System.out.println(pattern.pattern());
+
+        System.out.println("9ecc18b47f25f47f".hashCode());
     }
 
     private static HttpClientBuilder cb;
