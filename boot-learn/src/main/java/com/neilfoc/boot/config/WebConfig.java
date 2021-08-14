@@ -2,6 +2,7 @@ package com.neilfoc.boot.config;
 
 import com.neilfoc.boot.object.Pet;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.format.FormatterRegistry;
 import org.springframework.util.StringUtils;
@@ -14,6 +15,7 @@ import org.springframework.web.util.UrlPathHelper;
  * @Description
  * @Date 2021/8/11
  */
+@Configuration(proxyBeanMethods = false) // 【】配置文件一定要加配置注解
 public class WebConfig {
 
     //1、WebMvcConfigurer定制化SpringMVC的功能
