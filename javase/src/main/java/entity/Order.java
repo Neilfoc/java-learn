@@ -7,7 +7,6 @@ import lombok.*;
  * @Description
  * @Date 2020/11/14
  */
-@NoArgsConstructor
 @Getter
 @Setter
 @Data
@@ -17,6 +16,11 @@ public class Order {
     private String customerName;
     private double totalPrice;
     private Person person;
+
+    public Order(){
+        System.out.println("order 父订单 无参构造函数");
+    }
+
     public Order(long id,long customerId,String customerName,double totalPrice){
         this.id = id;
         this.customerId = customerId;
