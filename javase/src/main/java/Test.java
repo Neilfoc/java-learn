@@ -4,22 +4,36 @@ import com.alibaba.fastjson.serializer.SerializeFilter;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
+import net.sf.oval.constraint.Length;
 import net.sf.oval.constraint.NotBlank;
+import net.sf.oval.constraint.NotEmpty;
 import net.sf.oval.constraint.NotNull;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.collections.ListUtils;
 import org.apache.commons.collections.SetUtils;
+import org.apache.commons.httpclient.util.URIUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.http.HttpHost;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.springframework.beans.BeanUtils;
 import tests.copyTest.Account;
 
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.math.BigDecimal;
+import java.net.URL;
 import java.net.URLEncoder;
+import java.nio.file.Path;
+import java.security.Key;
+import java.security.KeyPair;
+import java.security.KeyPairGenerator;
+import java.security.NoSuchAlgorithmException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -41,31 +55,10 @@ public class Test {
 
     //@SneakyThrows
     public static void main(String[] args) throws IOException {
-        //ArrayList<String> l1 = Lists.newArrayList("123", "345");
-        //ArrayList<String> l2 = Lists.newArrayList("123", "345");
-        //boolean b = Collections.disjoint(l1, l2);
-        //boolean b = l1.retainAll(l2);
-        //System.out.println(b);
-        //System.out.println(CollectionUtils.isNotEmpty(l1));
-        //System.out.println(l2.contains(null));
-        //
-        //int[] arr = {1,2};
-        //Long time = 1630339200000L;
-        //int l = (int) ((time - System.currentTimeMillis()) /1000);
-        //System.out.println(l);
-        //
-        //int[][] arr1 = new int[0][1];
-        //System.out.println(arr1[0].length);
 
-        //String[] s = "江苏_".split("_");
-        //System.out.println(s.length);
-        //System.out.println(JSON.toJSONString(s));
-
-        //Pattern pattern = Pattern.compile("\\d+");
-        //System.out.println(pattern.pattern());
-
-        System.out.println("9ecc18b47f25f47f".hashCode());
     }
+
+
 
     private static HttpClientBuilder cb;
 
@@ -336,6 +329,44 @@ public class Test {
         List<Integer> figures= Stream.of(a,b)
                 .flatMap(u->u.stream())
                 .collect(Collectors.toList());*/
+
+        //ArrayList<String> l1 = Lists.newArrayList("123", "345");
+        //ArrayList<String> l2 = Lists.newArrayList("123", "345");
+        //boolean b = Collections.disjoint(l1, l2);
+        //boolean b = l1.retainAll(l2);
+        //System.out.println(b);
+        //System.out.println(CollectionUtils.isNotEmpty(l1));
+        //System.out.println(l2.contains(null));
+        //
+        //int[] arr = {1,2};
+        //Long time = 1630339200000L;
+        //int l = (int) ((time - System.currentTimeMillis()) /1000);
+        //System.out.println(l);
+        //
+        //int[][] arr1 = new int[0][1];
+        //System.out.println(arr1[0].length);
+
+        //String[] s = "江苏_".split("_");
+        //System.out.println(s.length);
+        //System.out.println(JSON.toJSONString(s));
+
+        //Pattern pattern = Pattern.compile("\\d+");
+        //System.out.println(pattern.pattern());
+
+        /*System.out.println("9ecc18b47f25f47f".hashCode());
+        Map<String, String> map = new HashMap<>();
+        map.put("a", null);
+        map.put("b", null);
+        System.out.println(map.size());
+        System.out.println(JSON.toJSONString(map,SerializerFeature.WriteMapNullValue));
+        System.out.println(map.get("a"));*/
+
+        //Man man = new Man(1, "xx", "ooqaq");
+        //Person person = new Person();
+        //BeanUtils.copyProperties(man, person);
+        //System.out.println(JSON.toJSONString(person));
+
+        //System.out.println("xixi\thaha");
     }
 
     //洗牌
@@ -350,5 +381,32 @@ public class Test {
             temp[left] = tmp;
         }
         return Arrays.copyOfRange(temp, 0, num > length ? length : num);// 从临时数组中复制出指定长度的数组
+    }
+
+    // 生成公私钥
+    public static Map<String, String> generate(){
+        KeyPairGenerator kpg = null;
+        Map<String, String> map = new HashMap<>();
+        try {
+            kpg = KeyPairGenerator.getInstance("RSA");
+            // 初始化KeyPairGenerator对象,密钥长度
+            kpg.initialize(2048);
+            // 生成密匙对
+            KeyPair keyPair = kpg.generateKeyPair();
+            // 得到公钥
+            Key publicKey = keyPair.getPublic();
+            // 得到私钥
+            Key privateKey = keyPair.getPrivate();
+
+            String priKey = new String(Base64.getEncoder().encode(privateKey.getEncoded()));
+            System.out.println(priKey);
+            String pubKey = new String(Base64.getEncoder().encode(publicKey.getEncoded()));
+
+            map.put("public", pubKey);
+            map.put("private", priKey);
+        } catch (NoSuchAlgorithmException e) {
+            log.error("generate keyPair error",e);
+        }
+        return map;
     }
 }
