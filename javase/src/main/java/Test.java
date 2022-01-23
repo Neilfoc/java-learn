@@ -3,6 +3,7 @@ import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.alibaba.fastjson.serializer.SerializeFilter;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.google.common.collect.Lists;
+import com.google.common.util.concurrent.RateLimiter;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.oval.constraint.Length;
 import net.sf.oval.constraint.NotBlank;
@@ -55,9 +56,10 @@ public class Test {
 
     //@SneakyThrows
     public static void main(String[] args) throws IOException {
-
+        List<String> a = null;
+        ArrayList<String> list = Lists.newArrayList(a);
+        System.out.println(list.size());
     }
-
 
 
     private static HttpClientBuilder cb;
@@ -384,7 +386,7 @@ public class Test {
     }
 
     // 生成公私钥
-    public static Map<String, String> generate(){
+    public static Map<String, String> generate() {
         KeyPairGenerator kpg = null;
         Map<String, String> map = new HashMap<>();
         try {
@@ -405,7 +407,7 @@ public class Test {
             map.put("public", pubKey);
             map.put("private", priKey);
         } catch (NoSuchAlgorithmException e) {
-            log.error("generate keyPair error",e);
+            log.error("generate keyPair error", e);
         }
         return map;
     }
