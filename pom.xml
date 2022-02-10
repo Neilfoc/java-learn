@@ -12,6 +12,7 @@
         <module>Javaee</module>
         <module>elasticsearch</module>
         <module>algorithm-learn</module>
+        <module>spring-learn</module>
     </modules>
 
     <properties>

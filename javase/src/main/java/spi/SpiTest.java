@@ -16,7 +16,7 @@ public class SpiTest {
         // 1.Mysql的Driver例子
         Class.forName("com.mysql.jdbc.Driver");//先创建一个Driver对象放到DriverManager.registeredDrivers 集合中
         // getConnection的时候，DriverManager 从该 registeredDrivers 集合中获取对应的 Driver 对象创建 Connection
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "123");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/test", "root", "123456");
         System.out.println(connection);
 
 

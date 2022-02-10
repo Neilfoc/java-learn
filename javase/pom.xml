@@ -45,8 +45,14 @@
             <artifactId>commons-codec</artifactId>
             <version>1.14</version>
         </dependency>
-
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.40</version>
+        </dependency>
     </dependencies>
+
+
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
