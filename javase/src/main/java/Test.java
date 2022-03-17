@@ -20,6 +20,7 @@ import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
+import org.openjdk.jol.info.ClassLayout;
 import org.springframework.beans.BeanUtils;
 import tests.copyTest.Account;
 
@@ -56,13 +57,17 @@ public class Test {
 
     //@SneakyThrows
     public static void main(String[] args) throws IOException {
-        List<String> a = null;
-        ArrayList<String> list = Lists.newArrayList(a);
-        System.out.println(list.size());
+        jol();
     }
 
 
-    private static HttpClientBuilder cb;
+    public static void jol() {
+        Object o = new Object();
+        System.out.println(ClassLayout.parseInstance(o).toPrintable());
+        synchronized (o) {
+            System.out.println(ClassLayout.parseInstance(o).toPrintable());
+        }
+    }
 
     public void hasTested() {
         /*long time = System.nanoTime();
