@@ -26,8 +26,6 @@ public class SocketNIO {
 //        StandardSocketOptions.SO_REUSEADDR
 
 
-
-
         while (true) {
             Thread.sleep(1000);
             SocketChannel client = ss.accept(); //不会阻塞？  -1NULL

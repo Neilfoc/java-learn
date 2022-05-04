@@ -13,7 +13,7 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class SocketMultiplexingThreads {
+public class SocketMultiplexingThreadsV1 {
 
     private ServerSocketChannel server = null;
     private  Selector selector1 = null;
@@ -36,7 +36,7 @@ public class SocketMultiplexingThreads {
     }
 
     public static void main(String[] args) {
-        SocketMultiplexingThreads service = new SocketMultiplexingThreads();
+        SocketMultiplexingThreadsV1 service = new SocketMultiplexingThreadsV1();
         service.initServer();
         NioThread T1 = new NioThread(service.selector1 ,2);
         NioThread T2 = new NioThread(service.selector2);

@@ -11,25 +11,24 @@ import java.net.Socket;
 /**
  * BIO  多线程的方式
  */
-public class SocketIOPropertites {
-
+public class SocketBIO {
 
 
     //server socket listen property:
     private static final int RECEIVE_BUFFER = 10;
     private static final int SO_TIMEOUT = 0;
     private static final boolean REUSE_ADDR = false;
-    private static final int BACK_LOG = 2;
+    private static final int BACK_LOG = 2;  // 设置服务端可以accpet的备胎，吵过之后就不许在建立连接了
     //client socket listen property on server endpoint:
-    private static final boolean CLI_KEEPALIVE = false;
-    private static final boolean CLI_OOB = false;
+    private static final boolean CLI_KEEPALIVE = false; //true：在TCP层会发送心跳检测
+    private static final boolean CLI_OOB = false; //true会优先发第一个字符然后在发剩余的
     private static final int CLI_REC_BUF = 20;
     private static final boolean CLI_REUSE_ADDR = false;
     private static final int CLI_SEND_BUF = 20;
     private static final boolean CLI_LINGER = true;
     private static final int CLI_LINGER_N = 0;
     private static final int CLI_TIMEOUT = 0;
-    private static final boolean CLI_NO_DELAY = false;
+    private static final boolean CLI_NO_DELAY = false; //在内核中：false客户端有东西先不发攒着，true客户端有数据优先先发了
 /*
 
     StandardSocketOptions.TCP_NODELAY
@@ -47,17 +46,14 @@ public class SocketIOPropertites {
         ServerSocket server = null;
         try {
             server = new ServerSocket();
-            server.bind(new InetSocketAddress( 9090), BACK_LOG);
+            server.bind(new InetSocketAddress(9090), BACK_LOG);
             server.setReceiveBufferSize(RECEIVE_BUFFER);
             server.setReuseAddress(REUSE_ADDR);
             server.setSoTimeout(SO_TIMEOUT);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        System.out.println("server up use 9090!");
-        while (true) {
-            try {
+            System.out.println("server up use 9090!");
+
+            while (true) {
                 System.in.read();  //分水岭：
 
                 Socket client = server.accept();
@@ -99,14 +95,15 @@ public class SocketIOPropertites {
                         }
                 ).start();
 
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                server.close();
             } catch (IOException e) {
                 e.printStackTrace();
-            }finally {
-                try {
-                    server.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         }
     }
