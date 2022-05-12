@@ -1,5 +1,7 @@
 package netty;
 
+import io.netty.bootstrap.Bootstrap;
+import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.Unpooled;
 import io.netty.channel.*;
@@ -45,21 +47,68 @@ public class TestNetty {
     }
 
     @Test
+    public void NettyClient() throws Exception {
+        NioEventLoopGroup group = new NioEventLoopGroup();
+        Bootstrap bs = new Bootstrap();
+        ChannelFuture connect = bs.group(group)  //复用器
+                .channel(NioSocketChannel.class) //client
+                //.handler(new ChannelInitHandler()) //handler
+                .handler(new ChannelInitializer<SocketChannel>() {
+                    @Override
+                    protected void initChannel(SocketChannel ch) throws Exception {
+                        ChannelPipeline pipeline = ch.pipeline();
+                        pipeline.addLast(new MyInHandler());
+                    }
+                })
+                .connect(new InetSocketAddress("192.168.1.4", 9090)); //bind
+
+        Channel client = connect.sync().channel();
+
+        //【写】
+        ByteBuf byteBuf = Unpooled.copiedBuffer("hello world".getBytes());
+        ChannelFuture send = client.writeAndFlush(byteBuf);
+        send.sync();
+
+        client.closeFuture().sync();
+    }
+
+    @Test
     public void serverMode() throws Exception {
         NioEventLoopGroup thread = new NioEventLoopGroup(1);
         NioServerSocketChannel server = new NioServerSocketChannel();
 
         thread.register(server);
         ChannelPipeline pipeline = server.pipeline();
-        pipeline.addLast(new MyAcceptHandler(thread,new ChannelInitHandler()));
+        //pipeline.addLast(new MyAcceptHandler(thread,new MyInHandler()));
+        pipeline.addLast(new MyAcceptHandler(thread, new ChannelInitHandler()));
         ChannelFuture connect = server.bind(new InetSocketAddress("192.168.1.3", 9090));
 
         connect.sync().channel().closeFuture().sync();
         System.out.println("server connect closed...");
 
     }
-}
 
+    @Test
+    public void NettyServer() throws InterruptedException {
+        NioEventLoopGroup boss = new NioEventLoopGroup(1);
+        NioEventLoopGroup worker = new NioEventLoopGroup(1);
+        ServerBootstrap sbs = new ServerBootstrap();
+        ChannelFuture server = sbs.group(boss, worker)
+                .channel(NioServerSocketChannel.class) //必须是Nio的
+                .childHandler(new ChannelInitializer<SocketChannel>() {
+                    @Override
+                    protected void initChannel(SocketChannel ch) throws Exception {
+                        ChannelPipeline pipeline = ch.pipeline();
+                        pipeline.addLast(new MyInHandler());
+                    }
+                })
+                .bind(new InetSocketAddress("192.168.1.3", 9090));
+
+        server.sync().channel().closeFuture().sync();
+    }
+
+
+}
 
 
 //@ChannelHandler.Sharable //这个是在只有一个handler得情况下每个client共享，但是这样成员变量也共享了,所以这个handler需要时单例的不能共享。
@@ -89,7 +138,7 @@ class MyInHandler extends ChannelInboundHandlerAdapter {
 }
 
 //accept事件handler
-class MyAcceptHandler extends ChannelInboundHandlerAdapter{
+class MyAcceptHandler extends ChannelInboundHandlerAdapter {
     private final EventLoopGroup selector;
     private final ChannelHandler handler;
 
@@ -122,13 +171,20 @@ class MyAcceptHandler extends ChannelInboundHandlerAdapter{
 // 初始handler 每个client注册读事件时都可以单独得搞一个MyInHandler
 // MyInHandler不用加 @Sharable注解了
 @ChannelHandler.Sharable
-class ChannelInitHandler extends ChannelInboundHandlerAdapter{
+class ChannelInitHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelRegistered(ChannelHandlerContext ctx) throws Exception {//有注册事件就会调这个接口
         Channel client = ctx.channel();
         ChannelPipeline pipeline = client.pipeline();
         pipeline.addLast(new MyInHandler());//2.client::pipeline[ChannelInitHandler,MyInHandler]
-        pipeline.remove(this);//3.client::pipeline[MyInHandler]
+        //pipeline.remove(this);//3.client::pipeline[MyInHandler]
         System.out.println("new MyInHandler...");
+    }
+
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
+        System.out.println("ChannelInitHandler 没被移除");
+        // 这一行必须加，否则只执行当前handler
+        super.channelRead(ctx, msg);
     }
 }
