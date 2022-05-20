@@ -16,4 +16,6 @@ public class MyContent implements Serializable {
     String methodName;
     Class<?>[] parameterTypes;
     Object[] args;
+
+    String result;//返回值
 }

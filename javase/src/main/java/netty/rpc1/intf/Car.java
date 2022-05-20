@@ -6,5 +6,5 @@ package netty.rpc1.intf;
  * @Date 2022/5/17
  */
 public interface Car {
-    void doThings(String msg);
+    String doThings(String msg);
 }
