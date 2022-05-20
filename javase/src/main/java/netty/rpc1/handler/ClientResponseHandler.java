@@ -1,9 +1,9 @@
-package netty.rpc.handler;
+package netty.rpc1.handler;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
-import netty.rpc.constants.MyHeader;
+import netty.rpc1.constants.MyHeader;
 
 import java.io.ByteArrayInputStream;
 import java.io.ObjectInputStream;

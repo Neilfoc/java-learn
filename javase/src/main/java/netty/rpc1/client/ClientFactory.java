@@ -1,4 +1,4 @@
-package netty.rpc.client;
+package netty.rpc1.client;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.ChannelFuture;
@@ -6,7 +6,7 @@ import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import netty.rpc.handler.ClientResponseHandler;
+import netty.rpc1.handler.ClientResponseHandler;
 
 import java.net.InetSocketAddress;
 import java.util.Random;

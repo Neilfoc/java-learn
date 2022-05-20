@@ -1,4 +1,4 @@
-package netty.rpc.client;
+package netty.rpc1.client;
 
 import io.netty.channel.socket.nio.NioSocketChannel;
 

@@ -1,13 +1,13 @@
-package netty.rpc.proxy;
+package netty.rpc1.proxy;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.buffer.PooledByteBufAllocator;
 import io.netty.channel.ChannelFuture;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import netty.rpc.client.ClientFactory;
-import netty.rpc.constants.MyContent;
-import netty.rpc.constants.MyHeader;
-import netty.rpc.handler.ResponseHandler;
+import netty.rpc1.client.ClientFactory;
+import netty.rpc1.constants.MyContent;
+import netty.rpc1.constants.MyHeader;
+import netty.rpc1.handler.ResponseHandler;
 
 import java.io.ByteArrayOutputStream;
 import java.io.ObjectOutputStream;
