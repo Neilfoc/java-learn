@@ -53,7 +53,7 @@ public class ClientInvocationHandler2 implements InvocationHandler {
         long reqId = header.getReqId();
         CompletableFuture<String> res = new CompletableFuture<>();
         ResponseMappingCallback.addCallback(reqId, res);
-        //ResponseMappingCallback.addCallback(reqId, () -> {
+        //Callback.addCallback(reqId, () -> {
         //    System.out.println("调起callback，放行主线程...");
         //    countDownLatch.countDown();
         //});

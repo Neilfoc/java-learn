@@ -1,4 +1,4 @@
-package netty;
+package netty.learn;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.bootstrap.ServerBootstrap;
