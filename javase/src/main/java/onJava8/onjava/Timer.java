@@ -2,7 +2,7 @@
 // (c)2021 MindView LLC: see Copyright.txt
 // We make no guarantees that this code is fit for any purpose.
 // Visit http://OnJava8.com for more book information.
-package onJava8.concurrent24.onjava;
+package onJava8.onjava;
 
 import static java.util.concurrent.TimeUnit.NANOSECONDS;
 

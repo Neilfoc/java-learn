@@ -8,7 +8,7 @@ import static java.util.stream.LongStream.*;
 import java.io.*;
 import java.nio.file.*;
 
-import onJava8.concurrent24.onjava.Timer;
+import onJava8.onjava.Timer;
 
 public class ParallelPrime {
     static final int COUNT = 100_000;
@@ -20,7 +20,7 @@ public class ParallelPrime {
 
     public static void main(String[] args)
             throws IOException {
-        Timer timer = new Timer();
+        onJava8.onjava.Timer timer = new Timer();
         List<String> primes =
                 iterate(2, i -> i + 1)
                         .parallel()                       // [1]
