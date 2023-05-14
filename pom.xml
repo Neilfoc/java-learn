@@ -13,6 +13,7 @@
         <module>elasticsearch</module>
         <module>algorithm-learn</module>
         <module>spring-learn</module>
+        <module>c3p0-learn</module>
     </modules>
 
     <properties>
